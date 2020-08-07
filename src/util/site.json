@@ -3,7 +3,7 @@
     "title": "Degen Network",
     "titleTemplate": "%s",
     "description": "60% of the time, they win every time.",
-    "siteUrl": "https://twitter.com",
+    "siteUrl": "https://degen-network.netlify.app/",
     "image": "/assets/stackrole.png",
     "twitterUsername": "@stackrole"
   },
