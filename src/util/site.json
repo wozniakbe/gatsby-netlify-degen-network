@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Degen Network",
+    "title": "Pro Am Picks",
     "titleTemplate": "%s",
     "description": "60% of the time, they win every time.",
-    "siteUrl": "https://degen-network.netlify.app/",
+    "siteUrl": "https://pro-am-picks.netlify.app/",
     "image": "/assets/stackrole.png",
-    "twitterUsername": "@stackrole"
+    "twitterUsername": "@ProAmPicks"
   },
   "ga": "UA-XXXXXXXXX-X"
 }
