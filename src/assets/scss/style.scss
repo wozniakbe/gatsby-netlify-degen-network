@@ -252,6 +252,20 @@ article img {
 		border-radius: 12px;
 	}
 }
+.daily-picks-content {
+	max-width: 70ch;
+	margin:0 auto;
+	padding: 20px;
+	line-height: 1.5;
+	font-size: 20px;
+}
+
+.daily-picks {
+	.featured-image {
+		min-height: 50vh;
+		border-radius: 12px;
+	}
+}
 // Buttons 
 .button {
 	--padding: 20px;

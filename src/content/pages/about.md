@@ -1,8 +1,10 @@
 ---
 template: about-page
 slug: /about
-title: About Foundation
+title: About Pro-Am Picks
 ---
-About Us
+Offering industry-leading sports betting analysis and picks.
 
-![Toys](/assets/vanessa-bucceri-gdirwiyama8-unsplash.jpg "Toys")
+We like to make money. Join us.
+
+![](/assets/sportsbook.jpeg)
