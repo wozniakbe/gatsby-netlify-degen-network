@@ -58,7 +58,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create blog-list pages
   const postsPerPage = 9
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  // TODO: Make this number dynamic for each post type
+  const numPages = 1//Math.ceil(posts.filter(post => post.node.frontmatter.template == 'analysis-type').length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
