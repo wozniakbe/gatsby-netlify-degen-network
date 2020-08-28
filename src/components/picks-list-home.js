@@ -6,15 +6,15 @@ import PostCard from "./post-card"
 
 const PostMaker = ({ data }) => (
   <section className="home-posts">
-    <h2>Latest  <strong>Daily Picks</strong> <span class="icon -right"><RiArrowDownLine/></span></h2>
+    <h2>Latest  <strong>Daily Picks</strong> <span className="icon -right"><RiArrowDownLine/></span></h2>
     <div className="grids col-1 sm-2 lg-3">
       {data}
     </div>
-    <Link className="button" to="/blog">See more<span class="icon -right"><RiArrowRightSLine/></span></Link>
+    <Link className="button" to="/blog">See more<span className="icon -right"><RiArrowRightSLine/></span></Link>
   </section>
 )
 
-export default function BlogListHome() {
+export default function PicksListHome() {
   return (
     <StaticQuery 
       query={graphql`
