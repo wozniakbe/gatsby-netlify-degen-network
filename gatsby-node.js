@@ -6,6 +6,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   //const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const blogList = path.resolve(`./src/templates/blog-list.js`)
+  const dailyPicksList = path.resolve(`./src/templates/daily-picks-list.js`)
+  const analysis = path.resolve(`./src/templates/analysis-list.js`)
 
   const result = await graphql(`
     {
@@ -32,7 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  // Create blog posts
+  // Create all posts
   const posts = result.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
@@ -62,6 +64,35 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Create analysis pages
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/analysis` : `/analysis/${i + 1}`,
+      component: analysis,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Create daily picks list pages
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/daily-picks` : `/daily-picks/${i + 1}`,
+      component: dailyPicksList,
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
