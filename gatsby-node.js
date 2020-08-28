@@ -5,7 +5,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   //const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const blogList = path.resolve(`./src/templates/blog-list.js`)
   const dailyPicksList = path.resolve(`./src/templates/daily-picks-list.js`)
   const analysis = path.resolve(`./src/templates/analysis-list.js`)
 
@@ -60,19 +59,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const postsPerPage = 9
   // TODO: Make this number dynamic for each post type
   const numPages = 1//Math.ceil(posts.filter(post => post.node.frontmatter.template == 'analysis-type').length / postsPerPage)
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogList,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
 
   // Create analysis pages
 

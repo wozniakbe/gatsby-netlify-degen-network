@@ -14,7 +14,7 @@ const PostMaker = ({ data }) => (
   </section>
 )
 
-export default function BlogListHome() {
+export default function PicksListHome() {
   return (
     <StaticQuery 
       query={graphql`
