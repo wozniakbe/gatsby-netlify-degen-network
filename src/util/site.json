@@ -2,9 +2,9 @@
   "meta": {
     "title": "Pro-Am Picks",
     "titleTemplate": "%s",
-    "description": "60% of the time, they win every time.",
+    "description": "Offering professional picks for the amateur sports bettor ",
     "siteUrl": "https://pro-am-picks.netlify.app/",
-    "image": "/assets/stackrole.png",
+    "image": "/assets/pro_am_picks.jpeg",
     "twitterUsername": "@ProAmPicks"
   },
   "ga": "UA-XXXXXXXXX-X"
