@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: wozniakbe/gatsby-netlify-pro-am-picks
   branch: main
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
@@ -9,25 +10,56 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 # Uncomment local_backend when you need to develop in your local
-#local_backend: true # run npx netlify-cms-proxy-server for local testing
+# local_backend: true # run npx netlify-cms-proxy-server for local testing
 
 media_folder: "static/assets" 
 public_folder: "/assets" 
 
 collections:
-  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Posts' # Used in the UI
-    label_singular: 'Post' # Used in the UI, ie: "New Post"
+  - name: 'daily-picks' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Daily Picks' # Used in the UI
+    label_singular: 'Daily Picks Post' # Used in the UI, ie: "New Post"
     description: >
-      Create awesome content here.
-    folder: 'src/content/posts'
+      Official plays on the Pro-Am Picks Twitter account.
+    folder: 'src/content/daily-picks'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     summary: '{{title}} — {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - { label: 'Template', name: 'template', widget: 'hidden', default: 'blog-post'}
+      - { label: 'Template', name: 'template', widget: 'hidden', default: 'daily-picks'}
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Slug', name: 'slug', widget: 'string', hint: 'Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.'}
+      - { label: 'Slug', name: 'slug', widget: 'string', hint: 'Start slug with /. For Daily Picks, make the slug the date posted. Example: /08-26-2020'}
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - { label: 'SEO Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Featured Image',
+          name: 'featuredImage',
+          widget: 'image',
+          required: false,
+          tagname: ''
+        }
+
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+  - name: 'analysis' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Analysis' # Used in the UI
+    label_singular: 'Analysis Post' # Used in the UI, ie: "New Post"
+    description: >
+      Sport specific analysis and stats breakdowns.
+    folder: 'src/content/analysis'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} — {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Template', name: 'template', widget: 'hidden', default: 'analysis-type'}
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Slug', name: 'slug', widget: 'string', hint: 'Start slug with /. Use only alphanumeric characters, - and _. Example: /nba-analysis'}
       - {
           label: 'Publish Date',
           name: 'date',
