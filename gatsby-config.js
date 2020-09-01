@@ -94,6 +94,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-advanced-sitemap`,
+    {
+        resolve: 'gatsby-plugin-robots-txt',
+        options: {
+          host: `https://pro-am-picks.netlify.app`,
+          sitemap: `https://pro-am-picks.netlify.app/sitemap.xml`,
+          policy: [{ userAgent: '*', disallow: '' }],
+        },
+      },
     'gatsby-plugin-offline',
   ],
 }
