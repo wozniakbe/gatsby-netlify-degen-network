@@ -95,17 +95,13 @@ module.exports = {
     },
     `gatsby-plugin-advanced-sitemap`,
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Foundation`,
-        short_name: `Foundation`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-        icon: `static/assets/stackrole.png`,
+        resolve: 'gatsby-plugin-robots-txt',
+        options: {
+          host: `https://pro-am-picks.netlify.app`,
+          sitemap: `https://pro-am-picks.netlify.app/sitemap.xml`,
+          policy: [{ userAgent: '*', disallow: '' }],
+        },
       },
-    },
     'gatsby-plugin-offline',
   ],
 }
