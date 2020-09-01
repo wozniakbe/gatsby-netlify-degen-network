@@ -16,8 +16,12 @@ const MenuItems = [
     title: "Daily Picks"
   },
   {
-    path: "/",
+    path: "/analysis",
     title: "Analysis"
+  },
+  {
+    path: "/all-time-picks",
+    title: "All-Time Picks"
   },
   {
     path: "/contact",
@@ -53,12 +57,7 @@ class Navigation extends React.Component {
           <div className="icon-menu-close"><RiCloseLine/></div>
         </button>
         <ul>
-          {/* {listMenuItems} */}
-      <ListLink key="0" to="/">Home</ListLink>
-      <ListLink key="1" to="/about">About</ListLink>
-      <ListLink key="2" to="/daily-picks">Daily Picks</ListLink>
-      <ListLink key="3" to="/analysis">Analysis</ListLink>
-      <ListLink key="4" to="/contact">Contact Us</ListLink>
+          {listMenuItems}
         </ul>
       </nav>
     )
