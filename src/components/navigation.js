@@ -51,8 +51,8 @@ class Navigation extends React.Component {
       <ListLink key={index} to={menuItem.path}>{menuItem.title}</ListLink>
     )
     return (
-      <nav className="site-navigation" name="site-navigation">
-        <button onClick={this.handleToggleClick} name="menu-trigger" className={"menu-trigger" + (this.state.showMenu ? " is-active" : "")}>
+      <nav className="site-navigation" aria-label="site-navigation">
+        <button onClick={this.handleToggleClick} aria-label="menu-trigger" className={"menu-trigger" + (this.state.showMenu ? " is-active" : "")}>
           <div className="icon-menu-line"><RiMenu3Line/></div>
           <div className="icon-menu-close"><RiCloseLine/></div>
         </button>
